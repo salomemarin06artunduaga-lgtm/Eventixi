@@ -3,20 +3,6 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/pages/index.html"
-    },
-    {
-      "source": "/pages/(.*)",
-      "destination": "/pages/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/pages/$1.html"
-    }
-  ],
   "headers": [
     {
       "source": "/assets/(.*)",
