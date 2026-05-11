@@ -102,16 +102,29 @@ const AUTH_CONFIG = {
 
 ---
 
-## 🔒 Variables de entorno en Vercel (si necesitas)
+## 🔒 Variables de entorno en Vercel (REQUERIDO)
 
-Si necesitas variables de entorno secretas (API keys, tokens, etc.):
+**Debes configurar esto en Vercel:**
 
-1. En Vercel Dashboard → Settings → Environment Variables
-2. Agregar variable: `VITE_API_URL=https://tu-api.com`
-3. Usar en tu código:
-   ```javascript
-   const apiUrl = process.env.VITE_API_URL || CURRENT_ENV.API_BASE_URL;
+1. En Vercel Dashboard → **Settings** → **Environment Variables**
+2. Agregar variable:
    ```
+   VITE_BACKEND_URL=https://tu-backend-api.com/api
+   ```
+   Reemplaza `https://tu-backend-api.com/api` con tu URL real
+   
+3. (Opcional) Agregar autenticación separada:
+   ```
+   VITE_AUTH_URL=https://tu-backend-api.com/api/auth
+   ```
+
+**El archivo `env-config.js` ya está configurado para leer estas variables automáticamente.**
+
+### 📝 Ambiente local (.env.local - no subir a Git)
+Crea `.env.local` en la raíz con:
+```
+VITE_BACKEND_URL=http://localhost:5000/api
+```
 
 ---
 
